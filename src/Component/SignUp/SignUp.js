@@ -5,7 +5,8 @@ import firebaseConfig from "../../firebaseConfig";
 import { UserContext } from "../../App";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import "./signUp.css";
-import FacebookIcon from '@material-ui/icons/Facebook';
+import FacebookIcon from "@material-ui/icons/Facebook";
+import googleIcon from "../images/google.png";
 
 const SignUp = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -121,16 +122,24 @@ const SignUp = () => {
   };
 
   return (
-    <div style={{ background: "#fff", height: "600px", paddingBottom: "5%" }}>
+    <div style={{
+       background: "black",
+        height: "600px",
+         paddingBottom: "5%", 
+         
+         
+         }}>
       <div
         style={{
           width: "50%",
           margin: "0 auto",
           padding: "20px",
           borderRadius: "10px",
-          background: "#200",
-          marginTop: "10% auto",
+          background: "#300",
+          
           color: "white",
+          border: "2px solid tomato",
+          
         }}
       >
         <form onSubmit={handleSubmit}>
@@ -193,12 +202,17 @@ const SignUp = () => {
           <p style={{ color: "green" }}>User created successfully</p>
         )}
 
-        <div style={{margin:'0 auto', width:'50%'}}>
+        <div style={{ margin: "0 auto", width: "50%" }}>
           <button
             style={{ width: "100%", backgroundColor: "tomato", color: "white" }}
             class="btn btn-outline-warning "
             onClick={handleGoogleSignIn}
           >
+            <img
+              style={{ height: "20px", width: "20px" }}
+              src={googleIcon}
+              alt=""
+            />{" "}
             Continue With Google
           </button>
           <br />
@@ -208,7 +222,10 @@ const SignUp = () => {
             class="btn btn-outline-primary"
             onClick={handleFacebookSignIn}
           >
-            <b> <FacebookIcon/> Log in With Facebook</b>
+            <b>
+              {" "}
+              <FacebookIcon /> Log in With Facebook
+            </b>
           </button>
         </div>
       </div>

@@ -99,7 +99,7 @@ const [loggedInUser, setLoggedInUser] = useContext(UserContext);
                             shrink: true,
                             }}
                         /><br/>
-                        <Link to="/Hotel">  <Button className={classes.HotelBtn} variant="contained" color="secondary" disableElevation>Start Booking</Button></Link>
+                        <Link style={{textDecoration:'none'}} to="/Hotel">  <Button  className={classes.HotelBtn} variant="contained" color="secondary" disableElevation>Start Booking</Button></Link>
                     </form>
                 </CardContent>
             </Card>
