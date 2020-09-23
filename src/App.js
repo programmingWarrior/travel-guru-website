@@ -15,7 +15,7 @@ import SignUp from './Component/SignUp/SignUp';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import NoMatch from './Component/NoMatch/NoMatch';
 import Login from './Component/Login/Login';
-import UserPropail from './Component/UserPropail/UserPropail';
+import UserProfile from './Component/UserProfile/UserProfile';
 
 export const UserContext = createContext();
 
@@ -28,28 +28,28 @@ function App() {
           <Header/>
           <Switch>
             <Route path="/home">
-              <Home />
+              <Home></Home>
             </Route>
             <Route path="/SignUp">
-              <SignUp />
+              <SignUp></SignUp>
             </Route>
             <Route path="/Login">
-              <Login/>
+              <Login></Login>
             </Route>
             <Route path="/DetailsItem/:id">
               <DetailsItem />
             </Route>
-            <Route path="/UserPropail">
-              <UserPropail></UserPropail>
+            <Route path="/UserProfile">
+              <UserProfile></UserProfile>
             </Route>
             <PrivateRoute path="/Hotel">
               <Hotel/>
             </PrivateRoute>
             <Route exact path="/">
-              <Home />
+              <Home></Home>
             </Route>
             <Route path="*">
-            <NoMatch/>
+            <NoMatch></NoMatch>
             </Route>
           </Switch>
       </Router>

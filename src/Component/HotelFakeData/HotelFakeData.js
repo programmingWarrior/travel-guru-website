@@ -4,23 +4,23 @@ import img2 from '../images/Image/Rectangle 26.png';
 const HotelFakeData = [
     {
         "id":"0",
-        "price":"34",
-        "HotelName":"Light Vright airy stylish apt & safe peaceful stay",
-        "HotelBody":"It's newly constructed 7 storied building maintaining building code by a locally famous architect. Enough lights and natural air are playing here. The place (apartment) is calm and noise free....",
+        "price":"57",
+        "HotelName":"Hotel Beautiful Park and Motel",
+        "HotelBody":"Very beautiful and interesting place in the Asia. Enough lights and natural air are playing here. The place (apartment) is calm and noise free....",
         "HotelImg":`${img0}`,
     },
     {
         "id":"1",
-        "price":"52",
-        "HotelName":"Apartment in Lost Panorama",
-        "HotelBody":"Lost Panorama is a concept of living in an ancient city. A place of Art and culture, music and history and sharing knowledge with people....",
+        "price":"80",
+        "HotelName":"Hotel Agrabhad",
+        "HotelBody":"Hotel Agrabhad is a concept of living in an ancient city. A place of Art and culture, music and history and sharing knowledge with people....",
         "HotelImg":`${img1}`,
     },
     {
         "id":"2",
-        "price":"44",
-        "HotelName":"AR Lounge & Pool (r&r + b&b",
-        "HotelBody":"Its a recreation room on the roof top unit of my apt building. Its equipped with a snooker table, ....",
+        "price":"99",
+        "HotelName":"The NewYork Hotel",
+        "HotelBody":"It is a very beautiful hotel which is specially architect for the adventured people who can enjoy here all of thing , ....",
         "HotelImg":`${img2}`,
     },
 ];

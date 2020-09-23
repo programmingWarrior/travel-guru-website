@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../App';
 
-const UserPropail = () => {
+const UserProfile = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div>
@@ -10,4 +10,4 @@ const UserPropail = () => {
     );
 };
 
-export default UserPropail;
+export default UserProfile;

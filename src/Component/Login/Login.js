@@ -10,24 +10,24 @@ const Login = () => {
     const location = useLocation();
     const { from } = location.state || { from: { pathName: "/" } };
 
-    const handleInputLogin = (eb) => {
+    const handleInputLogin = (event) => {
         let FormValidLogin = true;
-        if (eb.target.name === "email") {
-            FormValidLogin = /\S+@\S+/.test(eb.target.value);
+        if (event.target.name === "email") {
+            FormValidLogin = /\S+@\S+/.test(event.target.value);
         }
-        if (eb.target.name === "password") {
-            const PasswordValid = eb.target.value.length > 5;
-            const PasswordNumberValid = /\d{1}/.test(eb.target.value);
+        if (event.target.name === "password") {
+            const PasswordValid = event.target.value.length > 5;
+            const PasswordNumberValid = /\d{1}/.test(event.target.value);
             FormValidLogin = PasswordValid && PasswordNumberValid;
         }
         if (FormValidLogin) {
             const newUserInfo = { ...loggedInUser };
-            newUserInfo[eb.target.name] = eb.target.value;
+            newUserInfo[event.target.name] = event.target.value;
             setLoggedInUser(newUserInfo);
         }
     }
 
-    const handleSubmitLogin = (eb) => {
+    const handleSubmitLogin = (event) => {
         if (loggedInUser.email && loggedInUser.password) {
             firebase.auth().signInWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
                 .then(response => {
@@ -46,26 +46,27 @@ const Login = () => {
                 });
 
         }
-        eb.preventDefault();
+        event.preventDefault();
     }
     return (
 
-        <div style={{background: '#F0F0F0',height:'550px' }}>
-            <div style={{ width: '30%', margin: '0 auto',paddingTop: '5%'}}>
+        <div style={{height:'550px' }}>
+            <div style={{ background: '#F0F0F0',width: '40%', margin: '0 auto',paddingTop: '5%',padding:'20px', border:'2px solid tomato',marginTop:'70px' }}>
                 <form onSubmit={handleSubmitLogin}>
                     <div className="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1"><b>Email address</b></label>
                         <input type="email" required name="email" onBlur={handleInputLogin} className="form-control" id="exampleInputEmail1" aria-describedby="EmailHelp" />
-                        <small id="EmailHelp" className="form-text text-muted">We'll never share your Email with anyone else.</small>
+                        <small id="EmailHelp" className="form-text text-muted">required.</small>
                     </div>
                     <div className="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword1"><b>Password</b></label>
                         <input type="password" required name="password" onBlur={handleInputLogin} className="form-control" id="exampleInputPassword1" />
+                        <small id="EmailHelp" className="form-text text-muted">required.</small>
                     </div>
 
-                    <button style={{ width: '100%' }} type="submit" className="btn btn-primary">Submit</button>
+                    <button style={{ width: '100%' }} type="submit" className="btn btn-warning"><b>Submit</b></button>
                 </form><br />
-                <Link to="/SignUp"><h5 style={{ TextAlign: 'center' }}>Sign Up</h5></Link>
+                <Link style={{textDecoration: 'none'}} to="/SignUp"><h5 style={{ TextAlign: 'center', }}> <small style={{color:'blue'}}>Create an account in this website</small> </h5></Link>
                 <p style={{ color: 'red' }}>{loggedInUser.error}</p>
                 {loggedInUser.successe && <p style={{ color: 'green' }}>Login successefully</p>}
             </div>

@@ -16,7 +16,7 @@ const Home = () => {
 
     return (
         <div className="backgroundImage d-flex bd-highlight mb-3 align-items-center">
-            <div style={{ width: '130%', color: 'white',margin:'7%' }} className="mr-auto p-2 bd-highlight">
+            <div style={{ width: '50%', color: 'white',margin:'7%' }} className="mr-auto p-2 bd-highlight">
 
                 <h1 className="TravelTitle">{item.TravelTitle}</h1>
                 <p>{item.TravelBody}</p>
@@ -26,7 +26,7 @@ const Home = () => {
 
             <div className="ml-auto p-2 bd-highlight travelItem">
                 {travel.map(travelItem =>
-                    <img className="image" onClick={() => handle(travelItem)} onLoad={() => handle(travelItem)} src={travelItem.img} alt="" />
+                    <img style={{height:'300px', width:'150px'}} className="image" onClick={() => handle(travelItem)} onLoad={() => handle(travelItem)} src={travelItem.img} alt="" />
                 )}
             </div>
 
