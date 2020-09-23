@@ -1,0 +1,33 @@
+.backgroundImage{
+    background-image: url(../images/Image/Rectangle\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    z-index: -1;
+}
+.image{
+    width:30%;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 5px solid #F50030;
+}
+.image:active {
+    border: 5px solid #FBBC04;
+    border-radius: 20px;
+    transform: translateY(4px);
+  }
+
+
+.iteBtn{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FBBC04;
+    font-weight: bold;
+}
+.TravelTitle{
+    font-Size:50px;
+    font-weight: bold;
+}
