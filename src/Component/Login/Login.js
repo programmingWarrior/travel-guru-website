@@ -66,7 +66,7 @@ const Login = () => {
 
                     <button style={{ width: '100%' }} type="submit" className="btn btn-warning"><b>Submit</b></button>
                 </form><br />
-                <Link style={{textDecoration: 'none'}} to="/SignUp"><h5 style={{ TextAlign: 'center', }}> <small style={{color:'blue'}}>Create an account in this website</small> </h5></Link>
+                <Link style={{textDecoration: 'none'}} to="/SignUp"><h5 style={{ TextAlign: 'center', }}> <small style={{color:'blue'}}>Create an account</small> </h5></Link>
                 <p style={{ color: 'red' }}>{loggedInUser.error}</p>
                 {loggedInUser.successe && <p style={{ color: 'green' }}>Login successefully</p>}
             </div>
