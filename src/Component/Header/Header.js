@@ -16,6 +16,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import './header.css';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   inputRoot: {
-    color: "inherit",
+    color: "white",
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -134,16 +135,16 @@ const Header = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
+        <IconButton aria-label="show 4 new mails" color="white">
+          <Badge badgeContent={4} color="white">
             <MailIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
+        <IconButton aria-label="show 11 new notifications" color="white">
+          <Badge badgeContent={11} color="white">
             <NotificationsIcon />
           </Badge>
         </IconButton>
@@ -154,7 +155,7 @@ const Header = () => {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
+          color="white"
         >
           <AccountCircle />
         </IconButton>
@@ -165,15 +166,22 @@ const Header = () => {
     </Menu>
   );
 
+  const linkStyle = {
+    
+    fontWeight: "bold",
+    fontSize: "15px" ,
+   
+
+  }
   return (
     <div>
       <div className={classes.grow}>
-        <AppBar style={{backgroundColor:'#C51162', padding:'20px'}} position="static">
+        <AppBar style={{backgroundColor:'#C51162',}} position="static">
           <Toolbar>
             <IconButton
               edge="start"
               className={classes.menuButton}
-              color="inherit"
+              color="white"
               aria-label="open drawer"
             >
               <MenuIcon />
@@ -187,7 +195,7 @@ const Header = () => {
                 <SearchIcon />
               </div>
               <InputBase className="form-controls"
-              style={{width:'400px', height:'60px'}}
+              style={{width:'300px', height:'45px'}}
                 placeholder="Search…"
                 classes={{
                   root: classes.inputRoot,
@@ -198,42 +206,44 @@ const Header = () => {
             </div>
             <div className={classes.grow} />
             <Link
-              style={{ color: "#fff", fontWeight: "bold", fontSize: "15px" }}
-              className="nav-link active"
+              style={{linkStyle,color:"white"}}
+              className="nav-link active link"
               to="/home"
             >
               Home <span className="sr-only">(current)</span>
             </Link>
 
-            <h3>
-              <Link
-                style={{ color: "white", fontSize: "15px" , textDecoration:'none',fontWeight: "bold"}}
-                to="/UserProfile"
-              >
-                Profile
-              </Link>
-            </h3>
+            <Link
+              style={{linkStyle,color:"white"}}
+              className="nav-link active link"
+              to="/UserProfile"
+            >
+              Profile <span className="sr-only">(current)</span>
+            </Link>
+
 
             <Link
-              style={{ color: "#fff", fontWeight: "bold", fontSize: "15px" }}
-              className="nav-link"
+              style={{linkStyle,color:"white"}}
+              className="nav-link link"
               to="/Hotel"
+
             >
-              BooKing
+              Ticket Booking
             </Link>
 
             <Link
-              style={{ color: "#fff", fontWeight: "bold", fontSize: "15px" }}
-              className="nav-link"
+              style={{linkStyle,color:"white"}}
+              className="nav-link link"
               to="/SignUp"
             >
               Sign up
             </Link>
 
-            <button type="button" class="btn">
+            <button type="button" className="btn">
               <Link
-                style={{ color: "#fff", fontWeight: "bold", fontSize: "15px" }}
-                className="nav-link"
+                style={{linkStyle,color:"white" 
+                 }}
+                className="nav-link link"
                 to="/Login"
               >
                 Login

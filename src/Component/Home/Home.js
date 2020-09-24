@@ -26,7 +26,7 @@ const Home = () => {
 
             <div className="ml-auto p-2 bd-highlight travelItem">
                 {travel.map(travelItem =>
-                    <img style={{height:'300px', width:'150px'}} className="image" onClick={() => handle(travelItem)} onLoad={() => handle(travelItem)} src={travelItem.img} alt="" />
+                    <img style={{height:'300px', width:'150px'}} className="image" onClick={() => handle(travelItem)} onLoad={() => handle(travelItem)} key={travelItem.id} src={travelItem.img} alt="" />
                 )}
             </div>
 

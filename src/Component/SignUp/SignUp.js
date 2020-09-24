@@ -26,13 +26,13 @@ const SignUp = () => {
     firebase
       .auth()
       .signInWithPopup(GoogleProvider)
-      .then(function (result) {
+      .then (result => {
         var { displayName, email } = result.user;
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
         history.replace(from);
       })
-      .catch(function (error) {
+      .catch (error => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
@@ -45,8 +45,10 @@ const SignUp = () => {
     firebase
       .auth()
       .signInWithPopup(FacebookProvider)
-      .then(function (result) {
-        var { displayName, email } = result.user;
+      .then(result => {
+        console.log(result.user);
+        const { displayName, email } = result.user;
+        
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
         history.replace(from);
@@ -59,7 +61,7 @@ const SignUp = () => {
         console.log(errorCode, errorMessage);
       });
   };
-  //firebase end ----------->
+  //facebook validation end ----------->
 
   const handleInput = (e) => {
     let FormValid = true;
@@ -124,7 +126,7 @@ const SignUp = () => {
   return (
     <div style={{
        background: "black",
-        height: "600px",
+        height: "px",
          paddingBottom: "5%", 
          
          
@@ -144,7 +146,7 @@ const SignUp = () => {
       >
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label for="exampleInputEmail1">
+            <label htmlFor="exampleInputEmail1">
               <b>Your name</b>
             </label>
             <input
@@ -156,7 +158,7 @@ const SignUp = () => {
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputEmail1">
+            <label htmlFor="exampleInputEmail1">
               <b>Email address</b>
             </label>
             <input
@@ -168,7 +170,7 @@ const SignUp = () => {
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">
+            <label htmlFor="exampleInputPassword1">
               <b>Password</b>
             </label>
             <input
@@ -205,7 +207,7 @@ const SignUp = () => {
         <div style={{ margin: "0 auto", width: "50%" }}>
           <button
             style={{ width: "100%", backgroundColor: "tomato", color: "white" }}
-            class="btn btn-outline-warning "
+            className="btn btn-outline-warning "
             onClick={handleGoogleSignIn}
           >
             <img
@@ -219,7 +221,7 @@ const SignUp = () => {
 
           <button
             style={{ background: "blue", color: "white", width: "100%" }}
-            class="btn btn-outline-primary"
+            className="btn btn-outline-primary"
             onClick={handleFacebookSignIn}
           >
             <b>

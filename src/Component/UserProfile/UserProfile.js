@@ -5,7 +5,7 @@ const UserProfile = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div>
-            <h1>Hello : {loggedInUser.name}</h1>
+            <h1> Welcome to Our Website <img src={loggedInUser.img} alt=""/> {loggedInUser.name}</h1>
         </div>
     );
 };
